@@ -78,20 +78,6 @@ const Education = () => {
                   </div>
                   <div className="text-3xl font-bold gradient-text">7.78</div>
                 </div>
-                
-                {/* GPA Progress Bar */}
-                <div className="mt-4 h-2 bg-secondary rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={inView ? { width: '77.8%' } : {}}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="h-full bg-gradient-to-r from-primary to-cyan-400 rounded-full"
-                  />
-                </div>
-                <div className="flex justify-between text-xs text-muted-foreground mt-2">
-                  <span>0.0</span>
-                  <span>10.0</span>
-                </div>
               </motion.div>
             </div>
           </motion.div>

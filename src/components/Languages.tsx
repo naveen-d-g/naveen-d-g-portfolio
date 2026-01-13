@@ -3,10 +3,10 @@ import { useInView } from 'react-intersection-observer';
 import { Globe } from 'lucide-react';
 
 const languages = [
-  { name: 'English', level: 85, label: 'Professional' },
-  { name: 'Tamil', level: 95, label: 'Native' },
-  { name: 'Telugu', level: 70, label: 'Conversational' },
-  { name: 'Hindi', level: 60, label: 'Basic' },
+  { name: 'English', label: 'Professional' },
+  { name: 'Tamil', label: 'Native' },
+  { name: 'Telugu', label: 'Conversational' },
+  { name: 'Hindi', label: 'Basic' },
 ];
 
 const Languages = () => {
@@ -40,7 +40,7 @@ const Languages = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="glass-card p-6 hover-glow"
             >
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Globe className="w-5 h-5 text-primary" />
                   <span className="font-semibold">{lang.name}</span>
@@ -48,18 +48,6 @@ const Languages = () => {
                 <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full">
                   {lang.label}
                 </span>
-              </div>
-              
-              <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={inView ? { width: `${lang.level}%` } : {}}
-                  transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-                  className="h-full bg-gradient-to-r from-primary to-cyan-400 rounded-full"
-                />
-              </div>
-              <div className="text-right text-xs text-muted-foreground mt-1">
-                {lang.level}%
               </div>
             </motion.div>
           ))}

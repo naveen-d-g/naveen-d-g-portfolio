@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             {[
               { icon: Github, href: 'https://github.com/naveen-d-g', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/naveen-dg', label: 'LinkedIn' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/naveen-d-g', label: 'LinkedIn' },
               { icon: Mail, href: 'mailto:naveendg101@gmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
