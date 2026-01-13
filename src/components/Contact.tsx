@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, Linkedin, Github, Send, MapPin } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Instagram, Send, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -23,14 +23,20 @@ const contactInfo = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/naveen-dg',
-    href: 'https://linkedin.com/in/naveen-dg',
+    value: 'linkedin.com/in/naveen-d-g',
+    href: 'https://www.linkedin.com/in/naveen-d-g',
   },
   {
     icon: Github,
     label: 'GitHub',
     value: 'github.com/naveen-d-g',
     href: 'https://github.com/naveen-d-g',
+  },
+  {
+    icon: Instagram,
+    label: 'Instagram',
+    value: 'Instagram',
+    href: 'https://www.instagram.com/naveen_d_g',
   },
 ];
 
