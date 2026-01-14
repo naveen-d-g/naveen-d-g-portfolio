@@ -9,10 +9,15 @@ const Resume = () => {
     triggerOnce: true,
   });
 
+  const resumeUrl = '/Naveen-D-G_Resume.pdf';
+
   const handleDownload = () => {
-    // Create resume content and trigger download
-    const resumeUrl = '/resume-naveen-dg.pdf';
-    window.open(resumeUrl, '_blank');
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Naveen-D-G_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -72,6 +77,25 @@ const Resume = () => {
                   Request Updated Copy
                 </Button>
               </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Embedded Resume PDF */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="max-w-4xl mx-auto mt-12"
+        >
+          <div className="glass-card p-4 md:p-6">
+            <h3 className="text-xl font-bold mb-4 text-center">Resume Preview</h3>
+            <div className="w-full aspect-[8.5/11] rounded-lg overflow-hidden border border-border">
+              <iframe
+                src={resumeUrl}
+                className="w-full h-full"
+                title="Naveen D G Resume"
+              />
             </div>
           </div>
         </motion.div>
