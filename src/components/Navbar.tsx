@@ -61,7 +61,7 @@ const Navbar = () => {
           className="text-xl font-bold gradient-text"
           whileHover={{ scale: 1.05 }}
         >
-          {'<'}Naveen{' />'}
+          {'<'}Naveen D G{' />'}
         </motion.a>
 
         {/* Desktop Navigation */}

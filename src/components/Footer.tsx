@@ -19,7 +19,7 @@ const Footer = () => {
               onClick={(e) => { e.preventDefault(); scrollToTop(); }}
               className="text-xl font-bold gradient-text inline-block"
             >
-              {'<'}Naveen{' />'}
+              {'<'}Naveen D G{' />'}
             </a>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Naveen D G. All rights reserved.
