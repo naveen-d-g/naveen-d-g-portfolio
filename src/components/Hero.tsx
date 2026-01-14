@@ -36,21 +36,124 @@ const Hero = () => {
         transition={{ duration: 8, repeat: Infinity, delay: 1 }}
       />
 
-      <div className="container-custom relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6"
-        >
-          {/* Profile Photo */}
+      <div className="container-custom relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 text-center lg:text-left flex-1"
+          >
+            {/* Status Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 glass-card text-sm"
+            >
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-muted-foreground">Available for opportunities</span>
+            </motion.div>
+
+            {/* Name */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+            >
+              Hi, I'm{' '}
+              <span className="gradient-text">Naveen D G</span>
+            </motion.h1>
+
+            {/* Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xl md:text-2xl text-muted-foreground"
+            >
+              <span className="font-mono text-primary">{'<'}</span>
+              <span>Python Developer</span>
+              <span className="text-primary">|</span>
+              <span>Final-Year CS Student</span>
+              <span className="font-mono text-primary">{'/>'}</span>
+            </motion.div>
+
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="max-w-2xl text-lg text-muted-foreground leading-relaxed"
+            >
+              Crafting scalable backend solutions, REST APIs, and AI-powered tools.
+              Passionate about clean code, data processing, and building user-focused applications.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4"
+            >
+              <Button
+                size="lg"
+                className="glow-effect"
+                onClick={() => scrollToSection('#resume')}
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="hover-glow"
+                onClick={() => scrollToSection('#projects')}
+              >
+                <FolderOpen className="w-5 h-5 mr-2" />
+                View Projects
+              </Button>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-center justify-center lg:justify-start gap-4 pt-8"
+            >
+              {[
+                { icon: Github, href: 'https://github.com/naveen-d-g', label: 'GitHub' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/naveen-d-g', label: 'LinkedIn' },
+                { icon: Mail, href: 'mailto:naveendg101@gmail.com', label: 'Email' },
+              ].map(({ icon: Icon, href, label }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 glass-card hover-glow text-muted-foreground hover:text-primary transition-colors"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={label}
+                >
+                  <Icon size={22} />
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right - Profile Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1 }}
-            className="relative mx-auto mb-4"
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="relative flex-shrink-0"
           >
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/30 shadow-lg shadow-primary/20">
+            <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
               <img
                 src={naveenPhoto}
                 alt="Naveen D G"
@@ -58,108 +161,10 @@ const Hero = () => {
               />
             </div>
             <div className="absolute inset-0 rounded-full bg-primary/10 animate-pulse" style={{ animationDuration: '3s' }} />
+            {/* Decorative ring */}
+            <div className="absolute -inset-4 rounded-full border-2 border-primary/20 animate-pulse" style={{ animationDuration: '4s' }} />
           </motion.div>
-
-          {/* Status Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 glass-card text-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-muted-foreground">Available for opportunities</span>
-          </motion.div>
-
-          {/* Name */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight"
-          >
-            Hi, I'm{' '}
-            <span className="gradient-text">Naveen D G</span>
-          </motion.h1>
-
-          {/* Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-2 text-xl md:text-2xl text-muted-foreground"
-          >
-            <span className="font-mono text-primary">{'<'}</span>
-            <span>Python Developer</span>
-            <span className="text-primary">|</span>
-            <span>Final-Year CS Student</span>
-            <span className="font-mono text-primary">{'/>'}</span>
-          </motion.div>
-
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed"
-          >
-            Crafting scalable backend solutions, REST APIs, and AI-powered tools.
-            Passionate about clean code, data processing, and building user-focused applications.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-4 pt-4"
-          >
-            <Button
-              size="lg"
-              className="glow-effect"
-              onClick={() => scrollToSection('#resume')}
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download Resume
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="hover-glow"
-              onClick={() => scrollToSection('#projects')}
-            >
-              <FolderOpen className="w-5 h-5 mr-2" />
-              View Projects
-            </Button>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="flex items-center justify-center gap-4 pt-8"
-          >
-            {[
-              { icon: Github, href: 'https://github.com/naveen-d-g', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://www.linkedin.com/in/naveen-d-g', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:naveendg101@gmail.com', label: 'Email' },
-            ].map(({ icon: Icon, href, label }) => (
-              <motion.a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 glass-card hover-glow text-muted-foreground hover:text-primary transition-colors"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label={label}
-              >
-                <Icon size={22} />
-              </motion.a>
-            ))}
-          </motion.div>
-        </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
