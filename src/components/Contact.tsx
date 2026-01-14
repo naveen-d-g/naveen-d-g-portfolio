@@ -35,8 +35,8 @@ const contactInfo = [
   {
     icon: Instagram,
     label: 'Instagram',
-    value: 'Instagram',
-    href: 'https://www.instagram.com/naveen_d_g',
+    value: 'im_naveen_dg',
+    href: 'https://www.instagram.com/im_naveen_dg?igsh=ejRmMWNoNDVjYjJu',
   },
 ];
 

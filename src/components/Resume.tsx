@@ -54,21 +54,6 @@ const Resume = () => {
                 including detailed project descriptions, technical skills, and achievements.
               </p>
 
-              {/* Resume Highlights */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-2xl py-6">
-                {[
-                  { label: 'Experience', value: 'Python Internship' },
-                  { label: 'Education', value: 'B.E. CSE' },
-                  { label: 'GPA', value: '7.78' },
-                  { label: 'Projects', value: '2+' },
-                ].map((item) => (
-                  <div key={item.label} className="p-4 bg-secondary/50 rounded-xl">
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
-                    <p className="font-semibold mt-1">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button
                   size="lg"
