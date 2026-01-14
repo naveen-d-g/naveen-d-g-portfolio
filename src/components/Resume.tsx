@@ -90,12 +90,20 @@ const Resume = () => {
         >
           <div className="glass-card p-4 md:p-6">
             <h3 className="text-xl font-bold mb-4 text-center">Resume Preview</h3>
-            <div className="w-full aspect-[8.5/11] rounded-lg overflow-hidden border border-border">
-              <iframe
-                src={resumeUrl}
+            <div className="w-full rounded-lg overflow-hidden border border-border" style={{ height: '800px' }}>
+              <object
+                data={resumeUrl}
+                type="application/pdf"
                 className="w-full h-full"
-                title="Naveen D G Resume"
-              />
+              >
+                <embed src={resumeUrl} type="application/pdf" className="w-full h-full" />
+                <p className="text-center p-8 text-muted-foreground">
+                  PDF cannot be displayed. 
+                  <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="text-primary ml-1 underline">
+                    Click here to view the resume
+                  </a>
+                </p>
+              </object>
             </div>
           </div>
         </motion.div>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Download, FolderOpen, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import naveenPhoto from '@/assets/naveen-photo.jpeg';
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -42,6 +43,23 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1 }}
+            className="relative mx-auto mb-4"
+          >
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/30 shadow-lg shadow-primary/20">
+              <img
+                src={naveenPhoto}
+                alt="Naveen D G"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 rounded-full bg-primary/10 animate-pulse" style={{ animationDuration: '3s' }} />
+          </motion.div>
+
           {/* Status Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
