@@ -16,7 +16,7 @@ const About = () => {
   });
 
   return (
-    <section id="about" className="section-padding relative">
+    <section id="about" className="section-padding section-border relative">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -25,8 +25,8 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-sm">// About Me</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+          <span className="text-primary font-mono text-sm text-glow">// About Me</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
             Executive Summary
           </h2>
         </motion.div>
@@ -41,23 +41,23 @@ const About = () => {
           >
             <div className="glass-card p-8 hover-glow">
               <div className="prose prose-invert max-w-none">
-                <p className="text-lg leading-relaxed text-muted-foreground">
-                  Aspiring <span className="text-foreground font-medium">final-year Computer Science student</span> skilled in{' '}
-                  <span className="text-primary">Python</span>,{' '}
-                  <span className="text-primary">Machine Learning</span>,{' '}
-                  <span className="text-primary">OCR/NLP</span> and{' '}
-                  <span className="text-primary">Django REST Framework</span> with experience developing scalable REST APIs, secure authentication systems and user-friendly desktop and web applications.
+                <p className="text-lg leading-relaxed text-foreground/80">
+                  Aspiring <span className="text-foreground font-semibold">final-year Computer Science student</span> skilled in{' '}
+                  <span className="text-primary text-glow font-medium">Python</span>,{' '}
+                  <span className="text-primary text-glow font-medium">Machine Learning</span>,{' '}
+                  <span className="text-primary text-glow font-medium">OCR/NLP</span> and{' '}
+                  <span className="text-primary text-glow font-medium">Django REST Framework</span> with experience developing scalable REST APIs, secure authentication systems and user-friendly desktop and web applications.
                 </p>
-                <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  Strong in <span className="text-foreground font-medium">API integration</span>, <span className="text-foreground font-medium">data processing</span> and <span className="text-foreground font-medium">clean backend design</span> with a proven ability to deliver reliable, user-focused software solutions.
+                <p className="text-lg leading-relaxed text-foreground/80 mt-4">
+                  Strong in <span className="text-foreground font-semibold">API integration</span>, <span className="text-foreground font-semibold">data processing</span> and <span className="text-foreground font-semibold">clean backend design</span> with a proven ability to deliver reliable, user-focused software solutions.
                 </p>
-                <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  Attention to detail with strong <span className="text-primary">problem-solving skills</span> and a focus on delivering reliable, user-focused solutions.
+                <p className="text-lg leading-relaxed text-foreground/80 mt-4">
+                  Attention to detail with strong <span className="text-primary text-glow font-medium">problem-solving skills</span> and a focus on delivering reliable, user-focused solutions.
                 </p>
               </div>
               
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-border">
+              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t-2 border-border/60">
                 {[
                   { value: '7.78', label: 'GPA' },
                   { value: '2+', label: 'Projects' },
@@ -68,10 +68,11 @@ const About = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.4 + index * 0.1 }}
-                    className="text-center"
+                    whileHover={{ scale: 1.05 }}
+                    className="text-center cursor-default"
                   >
                     <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+                    <div className="text-sm text-foreground/70 mt-1">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -91,14 +92,14 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
+                whileHover={{ scale: 1.05, y: -8 }}
                 className="glass-card p-5 text-center hover-glow group cursor-default"
               >
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                  <item.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="font-semibold text-sm">{item.label}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
+                <h3 className="font-semibold text-sm text-foreground">{item.label}</h3>
+                <p className="text-xs text-foreground/60 mt-1">{item.description}</p>
               </motion.div>
             ))}
           </motion.div>

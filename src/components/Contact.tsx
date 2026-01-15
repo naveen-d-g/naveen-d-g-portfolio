@@ -82,7 +82,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding relative">
+    <section id="contact" className="section-padding section-border relative">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -91,11 +91,11 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-sm">// Get In Touch</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+          <span className="text-primary font-mono text-sm text-glow">// Get In Touch</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
             Let's Connect
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <p className="text-foreground/70 mt-4 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, projects, or just having a chat about technology.
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ const Contact = () => {
             className="space-y-6"
           >
             <div className="glass-card p-8">
-              <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-xl font-bold mb-6 text-foreground">Contact Information</h3>
               <div className="space-y-4">
                 {contactInfo.map((item, index) => (
                   <motion.a
@@ -120,14 +120,15 @@ const Contact = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: index * 0.1 + 0.3 }}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
+                    whileHover={{ x: 4, scale: 1.02 }}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-primary/40 transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-5 h-5 text-primary" />
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                      <item.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
-                      <p className="font-medium group-hover:text-primary transition-colors">
+                      <p className="text-sm text-foreground/60">{item.label}</p>
+                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">
                         {item.value}
                       </p>
                     </div>
@@ -144,48 +145,48 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
-              <h3 className="text-xl font-bold mb-2">Send a Message</h3>
+              <h3 className="text-xl font-bold mb-2 text-foreground">Send a Message</h3>
               
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-sm text-muted-foreground">Name *</label>
+                  <label className="text-sm text-foreground/70">Name *</label>
                   <Input
                     placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-secondary border-border focus:border-primary"
+                    className="bg-secondary border-2 border-border/60 focus:border-primary transition-all duration-300"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm text-muted-foreground">Email *</label>
+                  <label className="text-sm text-foreground/70">Email *</label>
                   <Input
                     type="email"
                     placeholder="your@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-secondary border-border focus:border-primary"
+                    className="bg-secondary border-2 border-border/60 focus:border-primary transition-all duration-300"
                   />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm text-muted-foreground">Subject</label>
+                <label className="text-sm text-foreground/70">Subject</label>
                 <Input
                   placeholder="What's this about?"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="bg-secondary border-border focus:border-primary"
+                  className="bg-secondary border-2 border-border/60 focus:border-primary transition-all duration-300"
                 />
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm text-muted-foreground">Message *</label>
+                <label className="text-sm text-foreground/70">Message *</label>
                 <Textarea
                   placeholder="Your message..."
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-secondary border-border focus:border-primary resize-none"
+                  className="bg-secondary border-2 border-border/60 focus:border-primary resize-none transition-all duration-300"
                 />
               </div>
               

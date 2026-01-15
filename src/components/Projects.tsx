@@ -26,7 +26,7 @@ const Projects = () => {
     threshold: 0.1,
     triggerOnce: true
   });
-  return <section id="projects" className="section-padding relative">
+  return <section id="projects" className="section-padding section-border relative">
       <div className="container-custom">
         <motion.div ref={ref} initial={{
         opacity: 0,
@@ -37,11 +37,11 @@ const Projects = () => {
       } : {}} transition={{
         duration: 0.6
       }} className="text-center mb-16">
-          <span className="text-primary font-mono text-sm">// Featured Work</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+          <span className="text-primary font-mono text-sm text-glow">// Featured Work</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
             Projects
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <p className="text-foreground/70 mt-4 max-w-2xl mx-auto">
             Showcasing applications that demonstrate my skills in full-stack development, 
             AI integration, and clean software architecture.
           </p>
@@ -57,7 +57,7 @@ const Projects = () => {
         } : {}} transition={{
           duration: 0.6,
           delay: index * 0.2
-        }} className="glass-card overflow-hidden hover-glow group">
+        }} whileHover={{ y: -6 }} className="glass-card overflow-hidden hover-glow group">
               <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
               <div className="relative p-8 md:p-10">
@@ -65,13 +65,13 @@ const Projects = () => {
                   {/* Content */}
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold">{project.title}</h3>
-                      <p className={`${project.accentColor} font-mono text-sm mt-1`}>
+                      <h3 className="text-2xl md:text-3xl font-bold text-foreground">{project.title}</h3>
+                      <p className={`${project.accentColor} font-mono text-sm mt-1 text-glow`}>
                         {project.subtitle}
                       </p>
                     </div>
                     
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-foreground/80 leading-relaxed">
                       {project.description}
                     </p>
 
@@ -85,7 +85,7 @@ const Projects = () => {
                     x: 0
                   } : {}} transition={{
                     delay: index * 0.2 + i * 0.1 + 0.3
-                  }} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  }} className="flex items-center gap-3 text-sm text-foreground/70">
                           <span className={`w-1.5 h-1.5 rounded-full ${project.accentColor} bg-current`} />
                           {feature}
                         </motion.li>)}
@@ -93,7 +93,7 @@ const Projects = () => {
 
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2 pt-2">
-                      {project.tech.map(tech => <span key={tech} className="px-3 py-1 text-xs font-mono bg-secondary rounded-full text-muted-foreground">
+                      {project.tech.map(tech => <span key={tech} className="px-3 py-1 text-xs font-mono bg-secondary border border-border/50 rounded-full text-foreground/70 hover:text-foreground hover:border-primary/40 transition-all duration-300">
                           {tech}
                         </span>)}
                     </div>
@@ -112,8 +112,9 @@ const Projects = () => {
                     delay: index * 0.2 + i * 0.1 + 0.4
                   }} whileHover={{
                     scale: 1.1,
-                    rotate: 5
-                  }} className="aspect-square glass-card flex items-center justify-center group/icon">
+                    rotate: 5,
+                    y: -4
+                  }} className="aspect-square glass-card flex items-center justify-center group/icon cursor-pointer">
                           <Icon className={`w-10 h-10 ${project.accentColor} group-hover/icon:scale-110 transition-transform`} />
                         </motion.div>)}
                     </div>
