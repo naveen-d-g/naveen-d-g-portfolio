@@ -134,16 +134,45 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="relative flex-shrink-0"
           >
-            <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
+            {/* Outer decorative ring */}
+            <motion.div 
+              className="absolute -inset-6 rounded-full border-2 border-primary/40"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              style={{ boxShadow: '0 0 30px hsl(var(--primary) / 0.2)' }}
+            />
+            {/* Middle decorative ring */}
+            <motion.div 
+              className="absolute -inset-3 rounded-full border border-primary/30"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Glow behind image */}
+            <div 
+              className="absolute inset-0 rounded-full"
+              style={{ 
+                boxShadow: '0 0 60px 20px hsl(var(--primary) / 0.3), 0 0 100px 40px hsl(var(--primary) / 0.15)',
+              }}
+            />
+            {/* Main image container */}
+            <div 
+              className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/50"
+              style={{ 
+                boxShadow: '0 0 40px hsl(var(--primary) / 0.4), inset 0 0 30px hsl(var(--primary) / 0.1)',
+              }}
+            >
               <img
                 src={naveenPhoto}
                 alt="Naveen D G"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 rounded-full bg-primary/10 animate-pulse" style={{ animationDuration: '3s' }} />
-            {/* Decorative ring */}
-            <div className="absolute -inset-4 rounded-full border-2 border-primary/20 animate-pulse" style={{ animationDuration: '4s' }} />
+            {/* Pulsing overlay */}
+            <motion.div 
+              className="absolute inset-0 rounded-full border-2 border-primary/60"
+              animate={{ scale: [1, 1.05, 1], opacity: [0.6, 0.3, 0.6] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            />
           </motion.div>
         </div>
 

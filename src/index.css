@@ -147,8 +147,9 @@
 
   .section-border::before {
     content: '';
-    @apply absolute left-0 right-0 top-0 h-px;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    @apply absolute left-0 right-0 h-px;
+    top: 2rem;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
   }
 
   .container-custom {
