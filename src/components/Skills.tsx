@@ -51,7 +51,7 @@ const Skills = () => {
   });
 
   return (
-    <section id="skills" className="section-padding relative">
+    <section id="skills" className="section-padding section-border relative">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -60,11 +60,11 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-sm">// Technical Skills</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+          <span className="text-primary font-mono text-sm text-glow">// Technical Skills</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
             Technologies I Work With
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <p className="text-foreground/70 mt-4 max-w-2xl mx-auto">
             A comprehensive toolkit built through projects, internships, and continuous learning.
           </p>
         </motion.div>
@@ -76,13 +76,14 @@ const Skills = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              whileHover={{ y: -4 }}
               className="glass-card p-6 hover-glow group"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <category.icon className="w-5 h-5 text-primary" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                  <category.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="font-semibold">{category.title}</h3>
+                <h3 className="font-semibold text-foreground">{category.title}</h3>
               </div>
               
               <div className="flex flex-wrap gap-2">
@@ -92,8 +93,8 @@ const Skills = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: categoryIndex * 0.1 + skillIndex * 0.05 + 0.3 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-3 py-1.5 text-sm bg-secondary rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors cursor-default"
+                    whileHover={{ scale: 1.08, y: -2 }}
+                    className="skill-tag"
                   >
                     {skill}
                   </motion.span>
