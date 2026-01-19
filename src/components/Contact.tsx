@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, Linkedin, Github, Instagram, Send, MapPin } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Instagram, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const contactInfo = [
   {
@@ -69,16 +70,34 @@ const Contact = () => {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: 'Message Sent!',
-      description: 'Thank you for reaching out. I\'ll get back to you soon!',
-    });
-    
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim() || 'No Subject',
+          message: formData.message.trim(),
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: 'Message Sent!',
+        description: 'Thank you for reaching out. I\'ll get back to you soon!',
+      });
+      
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to send message. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
