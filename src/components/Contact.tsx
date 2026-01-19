@@ -8,6 +8,13 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
+// Validation constants (matching backend)
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 255;
+const MAX_SUBJECT_LENGTH = 200;
+const MAX_MESSAGE_LENGTH = 5000;
+const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
 const contactInfo = [
   {
     icon: Mail,
@@ -56,13 +63,32 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const validateForm = (): string | null => {
+    const { name, email, message } = formData;
+    
+    if (!name.trim()) return 'Name is required';
+    if (name.length > MAX_NAME_LENGTH) return `Name must be less than ${MAX_NAME_LENGTH} characters`;
+    
+    if (!email.trim()) return 'Email is required';
+    if (email.length > MAX_EMAIL_LENGTH) return `Email must be less than ${MAX_EMAIL_LENGTH} characters`;
+    if (!EMAIL_REGEX.test(email.trim())) return 'Please enter a valid email address';
+    
+    if (formData.subject.length > MAX_SUBJECT_LENGTH) return `Subject must be less than ${MAX_SUBJECT_LENGTH} characters`;
+    
+    if (!message.trim()) return 'Message is required';
+    if (message.length > MAX_MESSAGE_LENGTH) return `Message must be less than ${MAX_MESSAGE_LENGTH} characters`;
+    
+    return null;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.message) {
+    const validationError = validateForm();
+    if (validationError) {
       toast({
-        title: 'Missing Information',
-        description: 'Please fill in all required fields.',
+        title: 'Validation Error',
+        description: validationError,
         variant: 'destructive',
       });
       return;
@@ -71,16 +97,20 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase
-        .from('contact_messages')
-        .insert({
+      const { data, error } = await supabase.functions.invoke('submit-contact', {
+        body: {
           name: formData.name.trim(),
           email: formData.email.trim(),
-          subject: formData.subject.trim() || 'No Subject',
+          subject: formData.subject.trim(),
           message: formData.message.trim(),
-        });
+        },
+      });
 
       if (error) throw error;
+      
+      if (data?.error) {
+        throw new Error(data.error);
+      }
 
       toast({
         title: 'Message Sent!',
@@ -88,11 +118,11 @@ const Contact = () => {
       });
       
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending message:', error);
       toast({
         title: 'Error',
-        description: 'Failed to send message. Please try again.',
+        description: error.message || 'Failed to send message. Please try again.',
         variant: 'destructive',
       });
     } finally {
