@@ -58,7 +58,7 @@ const Hero = () => {
               <span className="font-mono text-primary">{'<'}</span>
               <span>Python Developer</span>
               <span className="text-primary">|</span>
-              <span>Final-Year CS Student</span>
+              <span>Full-Stack & ML Developer</span>
               <span className="font-mono text-primary">{'/>'}</span>
             </motion.div>
 
@@ -69,8 +69,8 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="max-w-2xl text-lg text-muted-foreground leading-relaxed"
             >
-              Crafting scalable backend solutions, REST APIs, and AI-powered tools.
-              Passionate about clean code, data processing, and building user-focused applications.
+              Building scalable full-stack applications, REST APIs, and machine learning solutions.
+              Passionate about clean backend design, data visualization, and user-focused software.
             </motion.p>
 
             {/* CTA Buttons */}

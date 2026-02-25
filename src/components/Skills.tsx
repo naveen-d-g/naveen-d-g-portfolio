@@ -1,15 +1,33 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  Code, Database, Layers, Wrench, Palette,
-  FileCode, Terminal, Server, GitBranch, Figma
+  Code, Database, Layers, Wrench,
+  Terminal
 } from 'lucide-react';
 
 const skillCategories = [
   {
     title: 'Programming & Development',
     icon: Code,
-    skills: ['Python', 'Java', 'HTML', 'CSS', 'JavaScript'],
+    skills: ['Python', 'Java', 'HTML', 'CSS', 'JavaScript', 'C/C++'],
+  },
+  {
+    title: 'Frameworks & Libraries',
+    icon: Layers,
+    skills: [
+      'Django REST Framework',
+      'Flask',
+      'React',
+      'FastAPI',
+      'PyTorch',
+      'TensorFlow',
+      'Scikit-learn',
+      'NumPy',
+      'Pandas',
+      'Matplotlib',
+      'Seaborn',
+      'CustomTkinter',
+    ],
   },
   {
     title: 'Databases',
@@ -17,30 +35,19 @@ const skillCategories = [
     skills: ['MySQL', 'Advanced SQL Querying'],
   },
   {
-    title: 'Frameworks & Tools',
-    icon: Layers,
-    skills: [
-      'Django REST Framework',
-      'Flask',
-      'React',
-      'REST APIs',
-      'CustomTkinter',
-    ],
-  },
-  {
-    title: 'Data Science & ML',
-    icon: Terminal,
-    skills: ['Matplotlib', 'Seaborn', 'Scikit-learn', 'NumPy', 'Pandas'],
-  },
-  {
     title: 'Developer Tools',
     icon: Wrench,
-    skills: ['Git', 'GitHub', 'Postman'],
+    skills: ['Git', 'GitHub', 'Postman', 'Canva', 'Photoshop'],
   },
   {
-    title: 'Design & UI/UX',
-    icon: Palette,
-    skills: ['Figma', 'Canva', 'Photoshop'],
+    title: 'Core Competencies',
+    icon: Terminal,
+    skills: [
+      'REST API Development & Integration',
+      'Full-Stack Web Development',
+      'Machine Learning (Supervised & Unsupervised)',
+      'Model Training & Data Visualization',
+    ],
   },
 ];
 
