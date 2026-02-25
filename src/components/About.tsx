@@ -84,7 +84,7 @@ const About = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-2 grid grid-cols-2 gap-4"
+            className="lg:col-span-2 grid grid-cols-1 gap-4"
           >
             {highlights.map((item, index) => (
               <motion.div
