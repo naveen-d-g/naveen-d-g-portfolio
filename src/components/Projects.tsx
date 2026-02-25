@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 const projects = [{
   title: 'LangBridge',
   subtitle: 'Multimodal Multilingual Translator',
-  description: 'Python desktop application for text, speech, image, and PDF translation with AI-powered language detection. Features OCR, text-to-speech, and real-time translation using Microsoft Translator API.',
-  features: ['AI-powered language detection', 'OCR for image translation', 'Text-to-speech support', 'Export to PDF/DOCX'],
+  description: 'Python app supporting text, speech, image, and PDF translation with AI-powered language detection. Implemented OCR, text-to-speech, and real-time translation via Microsoft Translator API.',
+  features: ['AI-powered language detection', 'OCR for image translation', 'Text-to-speech & real-time translation', 'Translation history & export to PDF/DOCX'],
   tech: ['Python', 'CustomTkinter', 'Microsoft Translator API', 'OCR', 'TTS'],
   icons: [Languages, FileText, Mic, Image],
   gradient: 'from-cyan-500/20 to-blue-500/20',
@@ -14,8 +14,8 @@ const projects = [{
 }, {
   title: 'Employee Management System',
   subtitle: 'Full-Stack Web Application',
-  description: 'Complete employee management solution built with Django REST Framework and React. Features secure authentication, CRUD operations, filtering, soft delete, and photo upload capabilities.',
-  features: ['User registration & token auth', 'CRUD with filtering', 'Soft delete functionality', 'Photo upload support'],
+  description: 'Full-stack web app using Django REST Framework and React.js for employee data management. Implemented user registration, token authentication, CRUD operations, filtering, and soft delete with secure REST APIs and a responsive React frontend.',
+  features: ['User registration & token auth', 'CRUD operations & filtering', 'Soft delete functionality', 'Secure REST APIs & responsive UI'],
   tech: ['Django REST Framework', 'React', 'REST APIs', 'Token Auth', 'MySQL'],
   icons: [Users, Shield, Database, Layers],
   gradient: 'from-purple-500/20 to-pink-500/20',

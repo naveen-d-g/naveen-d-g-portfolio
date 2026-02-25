@@ -51,7 +51,7 @@ const Resume = () => {
               
               <div>
                 <h3 className="text-2xl font-bold">Naveen D G</h3>
-                <p className="text-primary font-mono mt-1">Python Developer | CS Student</p>
+                <p className="text-primary font-mono mt-1">Python Developer | Full-Stack & Machine Learning Developer</p>
               </div>
 
               <p className="text-muted-foreground max-w-xl">

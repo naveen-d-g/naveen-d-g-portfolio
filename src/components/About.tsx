@@ -3,10 +3,10 @@ import { useInView } from 'react-intersection-observer';
 import { Code2, Database, Layers, Sparkles } from 'lucide-react';
 
 const highlights = [
-  { icon: Code2, label: 'Python & Django', description: 'Backend Development' },
-  { icon: Database, label: 'REST APIs', description: 'Scalable Systems' },
-  { icon: Layers, label: 'ML & AI Tools', description: 'OCR, NLP, Vision' },
-  { icon: Sparkles, label: 'Clean Code', description: 'Best Practices' },
+  { icon: Code2, label: 'Full-Stack Dev', description: 'Frontend & Backend' },
+  { icon: Database, label: 'REST APIs', description: 'Django, Flask, FastAPI' },
+  { icon: Layers, label: 'Machine Learning', description: 'PyTorch, TensorFlow' },
+  { icon: Sparkles, label: 'Clean Design', description: 'Scalable Solutions' },
 ];
 
 const About = () => {
@@ -42,17 +42,17 @@ const About = () => {
             <div className="glass-card p-8 hover-glow">
               <div className="prose prose-invert max-w-none">
                 <p className="text-lg leading-relaxed text-foreground/80">
-                  Aspiring <span className="text-foreground font-semibold">final-year Computer Science student</span> skilled in{' '}
-                  <span className="text-primary text-glow font-medium">Python</span>,{' '}
-                  <span className="text-primary text-glow font-medium">Machine Learning</span>,{' '}
-                  <span className="text-primary text-glow font-medium">OCR/NLP</span> and{' '}
-                  <span className="text-primary text-glow font-medium">Django REST Framework</span> with experience developing scalable REST APIs, secure authentication systems and user-friendly desktop and web applications.
+                  <span className="text-foreground font-semibold">Python Developer</span> with expertise in{' '}
+                  <span className="text-primary text-glow font-medium">Full-Stack Web Development</span> and{' '}
+                  <span className="text-primary text-glow font-medium">Machine Learning</span>, experienced in building scalable and secure applications.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/80 mt-4">
-                  Strong in <span className="text-foreground font-semibold">API integration</span>, <span className="text-foreground font-semibold">data processing</span> and <span className="text-foreground font-semibold">clean backend design</span> with a proven ability to deliver reliable, user-focused software solutions.
+                  Proficient in developing RESTful APIs using{' '}
+                  <span className="text-primary text-glow font-medium">Django REST Framework</span> and{' '}
+                  <span className="text-primary text-glow font-medium">Flask</span>, integrating third-party APIs and implementing authentication systems.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/80 mt-4">
-                  Attention to detail with strong <span className="text-primary text-glow font-medium">problem-solving skills</span> and a focus on delivering reliable, user-focused solutions.
+                  Strong background in <span className="text-foreground font-semibold">data preprocessing</span>, <span className="text-foreground font-semibold">model training</span> and <span className="text-foreground font-semibold">data visualization</span> with a focus on clean backend design and solutions.
                 </p>
               </div>
               
