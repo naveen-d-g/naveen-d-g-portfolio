@@ -42,7 +42,7 @@ const Resume = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="glass-card p-8 md:p-12 hover-glow">
+          <div className="glass-card p-5 sm:p-8 md:p-12 hover-glow">
             {/* Resume Preview Card */}
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="w-24 h-24 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -90,7 +90,8 @@ const Resume = () => {
         >
           <div className="glass-card p-4 md:p-6">
             <h3 className="text-xl font-bold mb-4 text-center">Resume Preview</h3>
-            <div className="w-full rounded-lg overflow-hidden border border-border" style={{ height: '800px' }}>
+          <div className="w-full rounded-lg overflow-hidden border border-border" style={{ height: '500px' }}>
+            {/* On mobile, show a simpler fallback */}
               <object
                 data={resumeUrl}
                 type="application/pdf"

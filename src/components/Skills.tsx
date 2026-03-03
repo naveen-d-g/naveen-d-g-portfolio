@@ -68,7 +68,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm text-glow">// Technical Skills</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 text-foreground">
             Technologies I Work With
           </h2>
           <p className="text-foreground/70 mt-4 max-w-2xl mx-auto">

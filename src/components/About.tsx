@@ -26,7 +26,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm text-glow">// About Me</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 text-foreground">
             Executive Summary
           </h2>
         </motion.div>
@@ -39,7 +39,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <div className="glass-card p-8 hover-glow">
+            <div className="glass-card p-5 sm:p-8 hover-glow">
               <div className="prose prose-invert max-w-none">
                 <p className="text-lg leading-relaxed text-foreground/80">
                   <span className="text-foreground font-semibold">Python Developer</span> with expertise in{' '}

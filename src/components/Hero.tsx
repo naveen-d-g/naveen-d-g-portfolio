@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4"
     >
 
       <div className="container-custom relative z-10">
@@ -42,7 +42,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight"
             >
               Hi, I'm{' '}
               <span className="gradient-text">Naveen D G</span>
@@ -53,7 +53,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xl md:text-2xl text-muted-foreground"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-1 sm:gap-2 text-base sm:text-xl md:text-2xl text-muted-foreground"
             >
               <span className="font-mono text-primary">{'<'}</span>
               <span>Python Developer</span>
@@ -67,7 +67,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="max-w-2xl text-lg text-muted-foreground leading-relaxed"
+              className="max-w-2xl text-sm sm:text-lg text-muted-foreground leading-relaxed"
             >
               Building scalable full-stack applications, REST APIs, and machine learning solutions.
               Passionate about clean backend design, data visualization, and user-focused software.
@@ -156,7 +156,7 @@ const Hero = () => {
             />
             {/* Main image container */}
             <div 
-              className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/50"
+              className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/50"
               style={{ 
                 boxShadow: '0 0 40px hsl(var(--primary) / 0.4), inset 0 0 30px hsl(var(--primary) / 0.1)',
               }}

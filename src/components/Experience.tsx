@@ -48,11 +48,11 @@ const Experience = () => {
               className="relative"
             >
               {/* Timeline Line */}
-              <div className="absolute left-8 top-16 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent" />
+              <div className="hidden sm:block absolute left-8 top-16 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent" />
               
               {/* Timeline Dot */}
               <motion.div 
-                className="absolute left-6 top-8 w-5 h-5 rounded-full bg-primary flex items-center justify-center z-10"
+                className="hidden sm:flex absolute left-6 top-8 w-5 h-5 rounded-full bg-primary items-center justify-center z-10"
                 whileHover={{ scale: 1.3 }}
                 style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.5)' }}
               >
@@ -61,7 +61,7 @@ const Experience = () => {
 
               <motion.div 
                 whileHover={{ y: -4 }}
-                className="ml-16 glass-card p-8 hover-glow"
+                className="sm:ml-16 glass-card p-5 sm:p-8 hover-glow"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                   <div>

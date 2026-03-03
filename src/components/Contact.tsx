@@ -141,7 +141,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm text-glow">// Get In Touch</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 text-foreground">
             Let's Connect
           </h2>
           <p className="text-foreground/70 mt-4 max-w-2xl mx-auto">
@@ -157,7 +157,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="glass-card p-8">
+            <div className="glass-card p-5 sm:p-8">
               <h3 className="text-xl font-bold mb-6 text-foreground">Contact Information</h3>
               <div className="space-y-4">
                 {contactInfo.map((item, index) => (
@@ -193,7 +193,7 @@ const Contact = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="glass-card p-5 sm:p-8 space-y-6">
               <h3 className="text-xl font-bold mb-2 text-foreground">Send a Message</h3>
               
               <div className="grid sm:grid-cols-2 gap-4">

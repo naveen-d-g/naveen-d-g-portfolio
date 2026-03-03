@@ -55,7 +55,7 @@ const Navbar = () => {
         isScrolled ? 'glass-card py-3' : 'py-5'
       }`}
     >
-      <div className="container-custom flex items-center justify-between">
+      <div className="container-custom px-4 flex items-center justify-between">
         <motion.a
           href="#home"
           onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
