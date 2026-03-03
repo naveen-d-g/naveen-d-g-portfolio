@@ -41,11 +41,40 @@ const certifications = [
   },
 ];
 
+const CertCard = ({ cert }: { cert: typeof certifications[0] }) => (
+  <a
+    href={cert.file}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="glass-card p-5 hover-glow group block shrink-0 w-[320px]"
+  >
+    <div className="flex items-start gap-4">
+      <div className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
+        <Award className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h3 className="font-semibold text-foreground text-sm leading-tight group-hover:text-primary transition-colors">
+          {cert.title}
+        </h3>
+        <p className="text-primary/80 text-xs font-medium mt-1.5">{cert.issuer}</p>
+        <div className="flex items-center gap-1.5 mt-2 text-muted-foreground text-xs">
+          <Calendar className="w-3 h-3" />
+          <span>{cert.date}</span>
+        </div>
+      </div>
+      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
+    </div>
+  </a>
+);
+
 const Certifications = () => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+
+  // Duplicate the list for seamless looping
+  const doubled = [...certifications, ...certifications];
 
   return (
     <section id="certifications" className="section-padding section-border relative">
@@ -65,39 +94,30 @@ const Certifications = () => {
             Professional certifications earned through continuous learning and skill development.
           </p>
         </motion.div>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
-            <motion.a
-              key={cert.title}
-              href={cert.file}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="glass-card p-6 hover-glow group block"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 shrink-0 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
-                  <Award className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-foreground text-sm leading-tight group-hover:text-primary transition-colors">
-                    {cert.title}
-                  </h3>
-                  <p className="text-primary/80 text-xs font-medium mt-1.5">{cert.issuer}</p>
-                  <div className="flex items-center gap-1.5 mt-2 text-muted-foreground text-xs">
-                    <Calendar className="w-3 h-3" />
-                    <span>{cert.date}</span>
-                  </div>
-                </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
-              </div>
-            </motion.a>
+      {/* Marquee container - full width, overflow hidden */}
+      <div className="relative overflow-hidden w-full group/marquee">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            x: {
+              duration: 30,
+              repeat: Infinity,
+              ease: 'linear',
+            },
+          }}
+          style={{ willChange: 'transform' }}
+        >
+          {doubled.map((cert, i) => (
+            <CertCard key={`${cert.title}-${i}`} cert={cert} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
