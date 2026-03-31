@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Languages, Users, FileText, Mic, Image, Shield, Database, Layers } from 'lucide-react';
+import { ExternalLink, Github, Languages, Users, FileText, Mic, Image, Shield, Database, Layers, Bot, Activity, Zap, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const projects = [{
   title: 'LangBridge',
@@ -10,7 +10,18 @@ const projects = [{
   tech: ['Python', 'CustomTkinter', 'Microsoft Translator API', 'OCR', 'TTS'],
   icons: [Languages, FileText, Mic, Image],
   gradient: 'from-cyan-500/20 to-blue-500/20',
-  accentColor: 'text-cyan-400'
+  accentColor: 'text-cyan-400',
+  github: 'https://github.com/naveen-d-g/Langbridge.git',
+}, {
+  title: 'Trust Engine',
+  subtitle: 'Autonomous Digital Trust & Resilience',
+  description: 'AI-driven security platform for real-time bot detection and behavioral trust analysis using machine learning and backend APIs. Built to identify automated threats through user interaction patterns and enforce security actions dynamically.',
+  features: ['ML-based bot detection using behavioral analytics', 'Real-time anomaly detection with Random Forest, Isolation Forest, XGBoost', 'Flask REST APIs for prediction and backend processing', 'Real-time dashboards with WebSockets integration', 'Automated security responses (session termination, alerts)'],
+  tech: ['Python', 'Flask', 'Machine Learning', 'React', 'WebSockets', 'Behavioral Analytics'],
+  icons: [Bot, Activity, Zap, BarChart3],
+  gradient: 'from-emerald-500/20 to-teal-500/20',
+  accentColor: 'text-emerald-400',
+  github: 'https://github.com/naveen-d-g/TRUST-ENGINE-Autonomous-Digital-Trust-Resilience.git',
 }, {
   title: 'Employee Management System',
   subtitle: 'Full-Stack Web Application',
@@ -19,7 +30,8 @@ const projects = [{
   tech: ['Django REST Framework', 'React', 'REST APIs', 'Token Auth', 'MySQL'],
   icons: [Users, Shield, Database, Layers],
   gradient: 'from-purple-500/20 to-pink-500/20',
-  accentColor: 'text-purple-400'
+  accentColor: 'text-purple-400',
+  github: 'https://github.com/naveen-d-g/EMS-Django.git',
 }];
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -91,12 +103,25 @@ const Projects = () => {
                         </motion.li>)}
                     </ul>
 
-                    {/* Tech Stack */}
+                    {/* Tech Stack & Links */}
                     <div className="flex flex-wrap gap-2 pt-2">
                       {project.tech.map(tech => <span key={tech} className="px-3 py-1 text-xs font-mono bg-secondary border border-border/50 rounded-full text-foreground/70 hover:text-foreground hover:border-primary/40 transition-all duration-300">
                           {tech}
                         </span>)}
                     </div>
+                    
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 mt-2 px-4 py-2 glass-card text-sm text-foreground/80 hover:text-primary hover:border-primary/40 transition-all duration-300 w-fit"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <Github className="w-4 h-4" />
+                        View on GitHub
+                      </motion.a>
+                    )}
                   </div>
 
                   {/* Visual */}

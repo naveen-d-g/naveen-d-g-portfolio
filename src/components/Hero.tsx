@@ -58,7 +58,7 @@ const Hero = () => {
               <span className="font-mono text-primary">{'<'}</span>
               <span>Python Developer</span>
               <span className="text-primary">|</span>
-              <span>Full-Stack & ML Developer</span>
+              <span>Full-Stack & Machine Learning Engineer</span>
               <span className="font-mono text-primary">{'/>'}</span>
             </motion.div>
 
