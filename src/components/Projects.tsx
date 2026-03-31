@@ -103,12 +103,25 @@ const Projects = () => {
                         </motion.li>)}
                     </ul>
 
-                    {/* Tech Stack */}
+                    {/* Tech Stack & Links */}
                     <div className="flex flex-wrap gap-2 pt-2">
                       {project.tech.map(tech => <span key={tech} className="px-3 py-1 text-xs font-mono bg-secondary border border-border/50 rounded-full text-foreground/70 hover:text-foreground hover:border-primary/40 transition-all duration-300">
                           {tech}
                         </span>)}
                     </div>
+                    
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 mt-2 px-4 py-2 glass-card text-sm text-foreground/80 hover:text-primary hover:border-primary/40 transition-all duration-300 w-fit"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <Github className="w-4 h-4" />
+                        View on GitHub
+                      </motion.a>
+                    )}
                   </div>
 
                   {/* Visual */}

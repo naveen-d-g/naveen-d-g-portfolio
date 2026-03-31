@@ -60,7 +60,7 @@ const About = () => {
               <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t-2 border-border/60">
                 {[
                   { value: '7.78', label: 'GPA' },
-                  { value: '2+', label: 'Projects' },
+                  { value: '3+', label: 'Projects' },
                   { value: '2026', label: 'Graduating' },
                 ].map((stat, index) => (
                   <motion.div
