@@ -15,18 +15,16 @@ const skillCategories = [
     title: 'Frameworks & Libraries',
     icon: Layers,
     skills: [
-      'Django REST Framework',
       'Flask',
-      'React',
-      'FastAPI',
+      'Django (REST APIs)',
+      'React.js',
       'PyTorch',
       'TensorFlow',
       'Scikit-learn',
-      'NumPy',
       'Pandas',
+      'NumPy',
       'Matplotlib',
       'Seaborn',
-      'CustomTkinter',
     ],
   },
   {
@@ -37,7 +35,7 @@ const skillCategories = [
   {
     title: 'Developer Tools',
     icon: Wrench,
-    skills: ['Git', 'GitHub', 'Postman', 'Canva', 'Photoshop'],
+    skills: ['Git', 'GitHub', 'Postman'],
   },
   {
     title: 'Core Competencies',

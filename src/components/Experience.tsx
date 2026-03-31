@@ -4,6 +4,17 @@ import { Briefcase, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
 
 const experiences = [
   {
+    title: 'Python Internship',
+    company: 'VIVID TRANS-TECH SOLUTIONS PRIVATE LIMITED',
+    location: 'Chennai, India',
+    duration: 'June 2025 – July 2025',
+    achievements: [
+      'Built LangBridge, a multilingual translator supporting text, speech, PDF, and image (OCR).',
+      'Integrated Microsoft Translator API and offline text-to-speech for accessibility.',
+      'Designed a CustomTkinter GUI with history management and export to DOCX/PDF.',
+    ],
+  },
+  {
     title: 'Machine Learning Intern',
     company: 'Bonton Softwares Pvt. Ltd.',
     location: 'Chennai, India',
@@ -14,17 +25,6 @@ const experiences = [
       'Built backend services using Flask REST APIs for real-time prediction and model integration.',
       'Implemented ML models for anomaly detection and automated threat response.',
       'Designed secure workflows for detecting and preventing automated malicious activities.',
-    ],
-  },
-  {
-    title: 'Python Internship',
-    company: 'VIVID TRANS-TECH SOLUTIONS PRIVATE LIMITED',
-    location: 'Chennai, India',
-    duration: '23/06/2025 – 22/07/2025',
-    achievements: [
-      'Built LangBridge, a multilingual translator supporting text, speech, PDF, and image (OCR).',
-      'Integrated Microsoft Translator API and offline text-to-speech for accessibility.',
-      'Designed a CustomTkinter GUI with history management and export to DOCX/PDF.',
     ],
   },
 ];
