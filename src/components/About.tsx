@@ -47,12 +47,12 @@ const About = () => {
                   <span className="text-primary text-glow font-medium">Machine Learning</span>, experienced in building scalable and secure applications.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/80 mt-4">
-                  Proficient in developing RESTful APIs using{' '}
-                  <span className="text-primary text-glow font-medium">Django REST Framework</span> and{' '}
-                  <span className="text-primary text-glow font-medium">Flask</span>, integrating third-party APIs and implementing authentication systems.
+                  Proficient in developing RESTful APIs and backend services using{' '}
+                  <span className="text-primary text-glow font-medium">Flask</span> and{' '}
+                  <span className="text-primary text-glow font-medium">Django</span>, along with implementing API integrations and authentication systems.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/80 mt-4">
-                  Strong background in <span className="text-foreground font-semibold">data preprocessing</span>, <span className="text-foreground font-semibold">model training</span> and <span className="text-foreground font-semibold">data visualization</span> with a focus on clean backend design and solutions.
+                  Hands-on experience in <span className="text-foreground font-semibold">AI/ML workflows</span> including <span className="text-foreground font-semibold">data preprocessing</span> and <span className="text-foreground font-semibold">model training</span>, with a strong focus on backend system design and machine learning model development.
                 </p>
               </div>
               

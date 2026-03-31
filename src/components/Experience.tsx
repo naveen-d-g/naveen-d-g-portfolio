@@ -4,6 +4,19 @@ import { Briefcase, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
 
 const experiences = [
   {
+    title: 'Machine Learning Intern',
+    company: 'Bonton Softwares Pvt. Ltd.',
+    location: 'Chennai, India',
+    duration: '01/2026 – 03/2026',
+    achievements: [
+      'Developed TRUST ENGINE, a machine learning-based bot detection system using behavioral analysis.',
+      'Performed analysis on user interaction patterns such as mouse movement and session behavior.',
+      'Built backend services using Flask REST APIs for real-time prediction and model integration.',
+      'Implemented ML models for anomaly detection and automated threat response.',
+      'Designed secure workflows for detecting and preventing automated malicious activities.',
+    ],
+  },
+  {
     title: 'Python Internship',
     company: 'VIVID TRANS-TECH SOLUTIONS PRIVATE LIMITED',
     location: 'Chennai, India',

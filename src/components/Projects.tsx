@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Languages, Users, FileText, Mic, Image, Shield, Database, Layers } from 'lucide-react';
+import { ExternalLink, Github, Languages, Users, FileText, Mic, Image, Shield, Database, Layers, Bot, Activity, Zap, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const projects = [{
   title: 'LangBridge',
@@ -10,7 +10,18 @@ const projects = [{
   tech: ['Python', 'CustomTkinter', 'Microsoft Translator API', 'OCR', 'TTS'],
   icons: [Languages, FileText, Mic, Image],
   gradient: 'from-cyan-500/20 to-blue-500/20',
-  accentColor: 'text-cyan-400'
+  accentColor: 'text-cyan-400',
+  github: 'https://github.com/naveen-d-g/Langbridge.git',
+}, {
+  title: 'Trust Engine',
+  subtitle: 'Autonomous Digital Trust & Resilience',
+  description: 'AI-driven security platform for real-time bot detection and behavioral trust analysis using machine learning and backend APIs. Built to identify automated threats through user interaction patterns and enforce security actions dynamically.',
+  features: ['ML-based bot detection using behavioral analytics', 'Real-time anomaly detection with Random Forest, Isolation Forest, XGBoost', 'Flask REST APIs for prediction and backend processing', 'Real-time dashboards with WebSockets integration', 'Automated security responses (session termination, alerts)'],
+  tech: ['Python', 'Flask', 'Machine Learning', 'React', 'WebSockets', 'Behavioral Analytics'],
+  icons: [Bot, Activity, Zap, BarChart3],
+  gradient: 'from-emerald-500/20 to-teal-500/20',
+  accentColor: 'text-emerald-400',
+  github: 'https://github.com/naveen-d-g/TRUST-ENGINE-Autonomous-Digital-Trust-Resilience.git',
 }, {
   title: 'Employee Management System',
   subtitle: 'Full-Stack Web Application',
@@ -19,7 +30,8 @@ const projects = [{
   tech: ['Django REST Framework', 'React', 'REST APIs', 'Token Auth', 'MySQL'],
   icons: [Users, Shield, Database, Layers],
   gradient: 'from-purple-500/20 to-pink-500/20',
-  accentColor: 'text-purple-400'
+  accentColor: 'text-purple-400',
+  github: 'https://github.com/naveen-d-g/EMS-Django.git',
 }];
 const Projects = () => {
   const [ref, inView] = useInView({
