@@ -42,14 +42,13 @@ const About = () => {
             <div className="glass-card p-5 sm:p-8 hover-glow">
               <div className="prose prose-invert max-w-none">
                 <p className="text-lg leading-relaxed text-foreground/80">
-                  <span className="text-foreground font-semibold">Python Developer</span> with expertise in{' '}
+                  <span className="text-foreground font-semibold">Python Developer</span> with a strong foundation in{' '}
                   <span className="text-primary text-glow font-medium">Full-Stack Web Development</span> and{' '}
-                  <span className="text-primary text-glow font-medium">Machine Learning</span>, experienced in building scalable and secure applications.
+                  <span className="text-primary text-glow font-medium">Machine Learning</span>, focused on building scalable and secure applications.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/80 mt-4">
                   Proficient in developing RESTful APIs and backend services using{' '}
-                  <span className="text-primary text-glow font-medium">Flask</span> and{' '}
-                  <span className="text-primary text-glow font-medium">Django</span>, along with implementing API integrations and authentication systems.
+                  <span className="text-primary text-glow font-medium">Flask</span>, along with API integration and authentication mechanisms.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/80 mt-4">
                   Hands-on experience in <span className="text-foreground font-semibold">AI/ML workflows</span> including <span className="text-foreground font-semibold">data preprocessing</span> and <span className="text-foreground font-semibold">model training</span>, with a strong focus on backend system design and machine learning model development.
