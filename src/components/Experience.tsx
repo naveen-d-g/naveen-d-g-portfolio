@@ -4,27 +4,25 @@ import { Briefcase, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Python Internship',
-    company: 'VIVID TRANS-TECH SOLUTIONS PRIVATE LIMITED',
+    title: 'Python Developer Intern',
+    company: 'Vivid Trans-Tech Solutions Pvt. Ltd.',
     location: 'Chennai, India',
     duration: 'June 2025 – July 2025',
     achievements: [
-      'Built LangBridge, a multilingual translator supporting text, speech, PDF, and image (OCR).',
-      'Integrated Microsoft Translator API and offline text-to-speech for accessibility.',
-      'Designed a CustomTkinter GUI with history management and export to DOCX/PDF.',
+      'Developed AI-based translation features supporting text, speech, image and document inputs using Python.',
+      'Implemented OCR pipelines to extract and process text from images and PDF documents.',
+      'Integrated translation APIs and built Python-based GUI components for multilingual translation workflows.',
     ],
   },
   {
-    title: 'Machine Learning Intern',
+    title: 'Python Fullstack Internship',
     company: 'Bonton Softwares Pvt. Ltd.',
     location: 'Chennai, India',
-    duration: '01/2026 – 03/2026',
+    duration: 'January 2026 – March 2026',
     achievements: [
-      'Developed TRUST ENGINE, a machine learning-based bot detection system using behavioral analysis.',
-      'Performed analysis on user interaction patterns such as mouse movement and session behavior.',
-      'Built backend services using Flask REST APIs for real-time prediction and model integration.',
-      'Implemented ML models for anomaly detection and automated threat response.',
-      'Designed secure workflows for detecting and preventing automated malicious activities.',
+      'Developed a ML–based bot detection system (TRUST ENGINE) for anomaly detection and behavioral analytics.',
+      'Designed and deployed Flask REST API endpoints serving real-time ML inference, integrating automated session termination on threat detection.',
+      'Implemented real-time event streaming via Kafka and WebSocket-based dashboards, enabling live behavioral analytics and sub-second monitoring updates.',
     ],
   },
 ];
