@@ -19,10 +19,13 @@ const skillCategories = [
       'Django',
       'REST APIs',
       'React.js',
+      'WebSockets',
       'PyTorch',
       'TensorFlow',
       'Scikit-learn',
       'XGBoost',
+      'Random Forest',
+      'Isolation Forest',
       'Pandas',
     ],
   },
@@ -34,7 +37,7 @@ const skillCategories = [
   {
     title: 'Tools',
     icon: Wrench,
-    skills: ['Git/GitHub', 'Postman', 'Kafka', 'Selenium', 'Nmap'],
+    skills: ['Git/GitHub', 'Postman', 'Kafka', 'Selenium', 'Nmap', 'OCR (Tesseract)', 'Microsoft Translator API'],
   },
   {
     title: 'Core Competencies',
@@ -44,6 +47,9 @@ const skillCategories = [
       'Full-Stack Web Development',
       'Machine Learning (Supervised & Unsupervised)',
       'Model Training & Data Preprocessing',
+      'Real-time Event Streaming (Kafka/WebSockets)',
+      'OCR & Document Processing',
+      'Bot Detection & Behavioral Analytics',
     ],
   },
 ];
