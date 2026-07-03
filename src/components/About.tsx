@@ -4,7 +4,7 @@ import { Code2, Database, Layers, Sparkles } from 'lucide-react';
 
 const highlights = [
   { icon: Code2, label: 'Full-Stack Dev', description: 'Frontend & Backend' },
-  { icon: Database, label: 'REST APIs', description: 'Django, Flask, FastAPI' },
+  { icon: Database, label: 'REST APIs', description: 'Python, Flask, Java' },
   { icon: Layers, label: 'Machine Learning', description: 'PyTorch, TensorFlow' },
   { icon: Sparkles, label: 'Clean Design', description: 'Scalable Solutions' },
 ];
