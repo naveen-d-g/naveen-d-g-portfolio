@@ -6,50 +6,51 @@
 
 @layer base {
   :root {
-    --background: 230 25% 5%;
-    --foreground: 210 40% 96%;
+    --background: 230 40% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 230 25% 8%;
-    --card-foreground: 210 40% 96%;
+    --card: 230 35% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 230 25% 8%;
-    --popover-foreground: 210 40% 96%;
+    --popover: 230 35% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 175 85% 55%;
-    --primary-foreground: 230 25% 5%;
+    --primary: 158 85% 55%;
+    --primary-foreground: 230 40% 4%;
 
-    --secondary: 230 25% 12%;
-    --secondary-foreground: 210 40% 96%;
+    --secondary: 230 30% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 230 20% 16%;
-    --muted-foreground: 215 20% 60%;
+    --muted: 230 25% 15%;
+    --muted-foreground: 220 15% 68%;
 
-    --accent: 265 80% 65%;
-    --accent-foreground: 230 25% 5%;
+    --accent: 262 85% 68%;
+    --accent-foreground: 230 40% 4%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 96%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 230 30% 22%;
-    --input: 230 25% 15%;
-    --ring: 175 85% 55%;
+    --border: 230 30% 20%;
+    --input: 230 25% 14%;
+    --ring: 158 85% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    --sidebar-background: 230 25% 8%;
-    --sidebar-foreground: 210 40% 96%;
-    --sidebar-primary: 175 85% 55%;
-    --sidebar-primary-foreground: 230 25% 5%;
-    --sidebar-accent: 230 25% 12%;
-    --sidebar-accent-foreground: 210 40% 96%;
-    --sidebar-border: 230 30% 22%;
-    --sidebar-ring: 175 85% 55%;
+    --sidebar-background: 230 35% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 158 85% 55%;
+    --sidebar-primary-foreground: 230 40% 4%;
+    --sidebar-accent: 230 30% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 30% 20%;
+    --sidebar-ring: 158 85% 55%;
 
     /* Custom tokens */
-    --glow-primary: 175 85% 55%;
-    --gradient-start: 175 85% 55%;
-    --gradient-end: 265 80% 65%;
-    --glass-bg: 230 25% 10%;
+    --glow-primary: 158 85% 55%;
+    --gradient-start: 158 85% 55%;
+    --gradient-mid: 190 90% 60%;
+    --gradient-end: 262 85% 68%;
+    --glass-bg: 230 35% 10%;
     --glass-border: 230 30% 25%;
   }
 
