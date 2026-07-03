@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code2, Database, Layers, Sparkles } from 'lucide-react';
+import { Server, Brain, Radio, ScanText } from 'lucide-react';
 
 const highlights = [
-  { icon: Code2, label: 'Full-Stack Dev', description: 'Frontend & Backend' },
-  { icon: Database, label: 'REST APIs', description: 'Python, Flask, Java' },
-  { icon: Layers, label: 'Machine Learning', description: 'PyTorch, TensorFlow' },
-  { icon: Sparkles, label: 'Clean Design', description: 'Scalable Solutions' },
+  { icon: Server, label: 'Backend Development', description: 'Python, Flask, Django, REST APIs' },
+  { icon: Brain, label: 'Machine Learning', description: 'PyTorch, TensorFlow, XGBoost' },
+  { icon: Radio, label: 'Real-Time Systems', description: 'Kafka, WebSockets, Live Analytics' },
+  { icon: ScanText, label: 'AI & OCR Pipelines', description: 'Tesseract, Translator APIs' },
 ];
 
 const About = () => {
