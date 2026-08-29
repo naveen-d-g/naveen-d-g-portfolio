@@ -34,7 +34,7 @@ const Hero = () => {
               className="inline-flex items-center gap-2 px-4 py-2 glass-card text-sm"
             >
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-muted-foreground">Available for opportunities</span>
+              <span className="text-muted-foreground">Freelancer • Open to work</span>
             </motion.div>
 
             {/* Name */}
@@ -56,10 +56,21 @@ const Hero = () => {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-1 sm:gap-2 text-base sm:text-xl md:text-2xl text-muted-foreground"
             >
               <span className="font-mono text-primary">{'<'}</span>
-              <span>Python Developer</span>
+              <span>Freelance Python Developer</span>
               <span className="text-primary">|</span>
-              <span>Full-Stack & Machine Learning Engineer</span>
+              <span>Full-Stack & ML Engineer</span>
               <span className="font-mono text-primary">{'/>'}</span>
+            </motion.div>
+
+            {/* Freelance services */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-foreground/80"
+            >
+              <span className="text-primary font-mono">//</span>
+              <span>Available for Web Development, Software Projects & Video Editing</span>
             </motion.div>
 
             {/* Tagline */}
