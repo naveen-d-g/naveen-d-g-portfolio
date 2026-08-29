@@ -193,7 +193,10 @@ const Contact = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card p-5 sm:p-8 space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="p-5 sm:p-8 space-y-6 rounded-xl backdrop-blur-xl bg-card/70 border border-border/50 shadow-lg"
+            >
               <h3 className="text-xl font-bold mb-2 text-foreground">Send a Message</h3>
               
               <div className="grid sm:grid-cols-2 gap-4">
