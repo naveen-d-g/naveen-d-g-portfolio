@@ -1,19 +1,6 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, Linkedin, Github, Instagram, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
-
-// Validation constants (matching backend)
-const MAX_NAME_LENGTH = 100;
-const MAX_EMAIL_LENGTH = 255;
-const MAX_SUBJECT_LENGTH = 200;
-const MAX_MESSAGE_LENGTH = 5000;
-const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+import { Mail, Phone, Linkedin, Github, Instagram } from 'lucide-react';
 
 const contactInfo = [
   {
@@ -54,82 +41,6 @@ const Contact = () => {
     triggerOnce: true,
   });
 
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const validateForm = (): string | null => {
-    const { name, email, message } = formData;
-    
-    if (!name.trim()) return 'Name is required';
-    if (name.length > MAX_NAME_LENGTH) return `Name must be less than ${MAX_NAME_LENGTH} characters`;
-    
-    if (!email.trim()) return 'Email is required';
-    if (email.length > MAX_EMAIL_LENGTH) return `Email must be less than ${MAX_EMAIL_LENGTH} characters`;
-    if (!EMAIL_REGEX.test(email.trim())) return 'Please enter a valid email address';
-    
-    if (formData.subject.length > MAX_SUBJECT_LENGTH) return `Subject must be less than ${MAX_SUBJECT_LENGTH} characters`;
-    
-    if (!message.trim()) return 'Message is required';
-    if (message.length > MAX_MESSAGE_LENGTH) return `Message must be less than ${MAX_MESSAGE_LENGTH} characters`;
-    
-    return null;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const validationError = validateForm();
-    if (validationError) {
-      toast({
-        title: 'Validation Error',
-        description: validationError,
-        variant: 'destructive',
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    try {
-      const { data, error } = await supabase.functions.invoke('submit-contact', {
-        body: {
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          subject: formData.subject.trim(),
-          message: formData.message.trim(),
-        },
-      });
-
-      if (error) throw error;
-      
-      if (data?.error) {
-        throw new Error(data.error);
-      }
-
-      toast({
-        title: 'Message Sent!',
-        description: 'Thank you for reaching out. I\'ll get back to you soon!',
-      });
-      
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error: any) {
-      console.error('Error sending message:', error);
-      toast({
-        title: 'Error',
-        description: error.message || 'Failed to send message. Please try again.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section id="contact" className="section-padding section-border relative">
       <div className="container-custom">
@@ -149,120 +60,41 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            <div className="glass-card p-5 sm:p-8">
-              <h3 className="text-xl font-bold mb-6 text-foreground">Contact Information</h3>
-              <div className="space-y-4">
-                {contactInfo.map((item, index) => (
-                  <motion.a
-                    key={item.label}
-                    href={item.href}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: index * 0.1 + 0.3 }}
-                    whileHover={{ x: 4, scale: 1.02 }}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-primary/40 transition-all duration-300 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
-                      <item.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-foreground/60">{item.label}</p>
-                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">
-                        {item.value}
-                      </p>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-2xl mx-auto"
+        >
+          <div className="glass-card p-5 sm:p-8">
+            <h3 className="text-xl font-bold mb-6 text-foreground">Contact Information</h3>
+            <div className="space-y-4">
+              {contactInfo.map((item, index) => (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: index * 0.1 + 0.3 }}
+                  whileHover={{ x: 4, scale: 1.02 }}
+                  className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 border border-border/50 hover:bg-secondary hover:border-primary/40 transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                    <item.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-foreground/60">{item.label}</p>
+                    <p className="font-medium text-foreground group-hover:text-primary transition-colors">
+                      {item.value}
+                    </p>
+                  </div>
+                </motion.a>
+              ))}
             </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="p-5 sm:p-8 space-y-6 rounded-xl backdrop-blur-xl bg-card/70 border border-border/50 shadow-lg"
-            >
-              <h3 className="text-xl font-bold mb-2 text-foreground">Send a Message</h3>
-              
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm text-foreground/70">Name *</label>
-                  <Input
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-secondary border-2 border-border/60 focus:border-primary transition-all duration-300"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm text-foreground/70">Email *</label>
-                  <Input
-                    type="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-secondary border-2 border-border/60 focus:border-primary transition-all duration-300"
-                  />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm text-foreground/70">Subject</label>
-                <Input
-                  placeholder="What's this about?"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="bg-secondary border-2 border-border/60 focus:border-primary transition-all duration-300"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm text-foreground/70">Message *</label>
-                <Textarea
-                  placeholder="Your message..."
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-secondary border-2 border-border/60 focus:border-primary resize-none transition-all duration-300"
-                />
-              </div>
-              
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full glow-effect"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                    Sending...
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </span>
-                )}
-              </Button>
-            </form>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

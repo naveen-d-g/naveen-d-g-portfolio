@@ -56,9 +56,11 @@ const Hero = () => {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-1 sm:gap-2 text-base sm:text-xl md:text-2xl text-muted-foreground"
             >
               <span className="font-mono text-primary">{'<'}</span>
-              <span>Freelance Python Developer</span>
+              <span>Freelancer</span>
               <span className="text-primary">|</span>
-              <span>Full-Stack & ML Engineer</span>
+              <span>Python Developer</span>
+              <span className="text-primary">|</span>
+              <span>AI/ML & Data Analytics Engineer</span>
               <span className="font-mono text-primary">{'/>'}</span>
             </motion.div>
 
