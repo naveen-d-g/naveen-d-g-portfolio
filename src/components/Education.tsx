@@ -52,7 +52,7 @@ const Education = () => {
                     Computer Science and Engineering
                   </p>
                   <p className="text-foreground/90 mt-2 font-medium">
-                    Arunai Engineering College
+                    Arunai Engineering College (Autonomous)
                   </p>
                   
                   <div className="flex flex-wrap gap-4 mt-4 text-sm text-foreground/70">
