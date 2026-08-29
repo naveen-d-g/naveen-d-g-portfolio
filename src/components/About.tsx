@@ -55,26 +55,6 @@ const About = () => {
                 </p>
               </div>
               
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t-2 border-border/60">
-                {[
-                  { value: '7.78', label: 'GPA' },
-                  { value: '3+', label: 'Projects' },
-                  { value: '2026', label: 'Graduating' },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="text-center cursor-default"
-                  >
-                    <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.value}</div>
-                    <div className="text-sm text-foreground/70 mt-1">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
             </div>
           </motion.div>
 
