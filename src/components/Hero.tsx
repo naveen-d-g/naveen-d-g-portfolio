@@ -72,7 +72,7 @@ const Hero = () => {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-foreground/80"
             >
               <span className="text-primary font-mono">//</span>
-              <span>Available for Web Development, Software Projects & Video Editing</span>
+              <span>Available For Web Development, Software Projects & Video Editing</span>
             </motion.div>
 
             {/* Tagline */}
@@ -82,8 +82,8 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="max-w-2xl text-sm sm:text-lg text-muted-foreground leading-relaxed"
             >
-              Building scalable full-stack applications, REST APIs, and machine learning solutions.
-              Passionate about clean backend design, data visualization, and user-focused software.
+              I Build Scalable Full-Stack Applications, REST APIs, AI/ML Solutions, And Data-Driven Systems.
+              Focused On Clean Backend Architecture, Intelligent Automation, Data Analytics, And Practical Software Solutions.
             </motion.p>
 
             {/* CTA Buttons */}
