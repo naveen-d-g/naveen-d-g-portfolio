@@ -136,29 +136,29 @@ const Hero = () => {
           >
             {/* Outer decorative ring */}
             <motion.div 
-              className="absolute -inset-6 rounded-full border-2 border-primary/40"
+              className="absolute -inset-6 rounded-full border-2 border-cyan-300/30"
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              style={{ boxShadow: '0 0 30px hsl(var(--primary) / 0.2)' }}
+              style={{ boxShadow: '0 0 40px hsl(190 90% 70% / 0.18)' }}
             />
             {/* Middle decorative ring */}
             <motion.div 
-              className="absolute -inset-3 rounded-full border border-primary/30"
+              className="absolute -inset-3 rounded-full border border-violet-300/25"
               animate={{ rotate: -360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             />
-            {/* Glow behind image */}
+            {/* Soft ambient glow behind image */}
             <div 
               className="absolute inset-0 rounded-full"
               style={{ 
-                boxShadow: '0 0 60px 20px hsl(var(--primary) / 0.3), 0 0 100px 40px hsl(var(--primary) / 0.15)',
+                boxShadow: '0 0 70px 25px hsl(190 90% 70% / 0.18), 0 0 120px 50px hsl(262 85% 70% / 0.1)',
               }}
             />
             {/* Main image container */}
             <div 
-              className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/50"
+              className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-cyan-200/40"
               style={{ 
-                boxShadow: '0 0 40px hsl(var(--primary) / 0.4), inset 0 0 30px hsl(var(--primary) / 0.1)',
+                boxShadow: '0 0 45px hsl(190 90% 70% / 0.25), inset 0 0 35px hsl(190 90% 70% / 0.08)',
               }}
             >
               <img
@@ -167,10 +167,10 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Pulsing overlay */}
+            {/* Soft pulsing overlay */}
             <motion.div 
-              className="absolute inset-0 rounded-full border-2 border-primary/60"
-              animate={{ scale: [1, 1.05, 1], opacity: [0.6, 0.3, 0.6] }}
+              className="absolute inset-0 rounded-full border-2 border-cyan-200/35"
+              animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.25, 0.5] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
