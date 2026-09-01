@@ -39,7 +39,14 @@ const certifications = [
     image: '/certificates/img-UiPath_UI.jpg',
     file: '/certificates/UI_Automation_UiPath.pdf',
   },
+  {
+    title: 'Technology Job Simulation',
+    issuer: 'Deloitte (Forage)',
+    image: '/certificates/img-Deloitte.jpg',
+    file: '/certificates/Deloitte_Technology_Job_Simulation.pdf',
+  },
 ];
+
 
 const CertCard = ({ cert }: { cert: typeof certifications[0] }) => (
   <a
